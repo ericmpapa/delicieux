@@ -1,5 +1,6 @@
 import 'package:delicieux/widgets/delicieux_searchfield.dart';
 import 'package:delicieux/widgets/liste_categories.dart';
+import 'package:delicieux/widgets/liste_top_recommandation.dart';
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
 
@@ -55,6 +56,7 @@ class Acceuil extends StatelessWidget {
           const SizedBox(height: 12),
           Expanded(
             child: Container(
+              padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
               decoration: const BoxDecoration(
                 color: util.couleurFond2,
                 shape: BoxShape.rectangle,
@@ -65,6 +67,7 @@ class Acceuil extends StatelessWidget {
                   bottomRight: Radius.zero,
                 ),
               ),
+              child: ListeTopRecommandation(),
             ),
           )
         ],
