@@ -1,5 +1,5 @@
+import 'package:delicieux/widgets/delicieux_searchfield.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
 
 class Acceuil extends StatelessWidget {
   @override
@@ -37,7 +37,7 @@ class Acceuil extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(20),
             child: Column(children: [
-              TextField(),
+              DelicieuxSearchField(),
               const SizedBox(height: 10),
               const Text(
                 "Plats par catégorie",
