@@ -1,32 +1,34 @@
 import 'package:delicieux/widgets/delicieux_searchfield.dart';
+import 'package:delicieux/widgets/liste_categories.dart';
 import 'package:flutter/material.dart';
+import 'package:delicieux/util/util.dart' as util;
 
 class Acceuil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 248, 243, 240),
+        backgroundColor: util.couleurFond1,
         elevation: 0,
       ),
-      backgroundColor: const Color.fromARGB(255, 248, 243, 240),
+      backgroundColor: util.couleurFond1,
       bottomNavigationBar: NavigationBar(
-        indicatorColor: const Color.fromARGB(255, 245, 105, 73),
+        indicatorColor: util.couleurAccent,
         destinations: const [
           NavigationDestination(
             selectedIcon: Icon(
               Icons.home,
-              color: Colors.white,
+              color: util.couleurBlanche,
             ),
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, color: util.couleurTexte),
             label: "acceuil",
           ),
           NavigationDestination(
             selectedIcon: Icon(
               Icons.shopping_cart,
-              color: Colors.white,
+              color: util.couleurBlanche,
             ),
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.shopping_cart, color: util.couleurTexte),
             label: "commandes",
           ),
         ],
@@ -35,42 +37,26 @@ class Acceuil extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(children: [
-              DelicieuxSearchField(),
-              const SizedBox(height: 10),
-              const Text(
-                "Plats par catégorie",
-              ),
-              const SizedBox(height: 10),
-              Row(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.black,
+                  DelicieuxSearchField(),
+                  const SizedBox(height: 20),
+                  Text(
+                    "Plats par catégorie",
+                    textAlign: TextAlign.left,
+                    style: util.titre1,
                   ),
-                  const SizedBox(width: 12),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.black,
-                  ),
-                  const SizedBox(width: 12),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
-            ]),
+                  const SizedBox(height: 10),
+                  ListeCategories()
+                ]),
           ),
           const SizedBox(height: 12),
           Expanded(
             child: Container(
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: util.couleurFond2,
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
