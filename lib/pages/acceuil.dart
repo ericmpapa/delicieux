@@ -1,3 +1,4 @@
+import 'package:delicieux/widgets/delicieux_appbar.dart';
 import 'package:delicieux/widgets/delicieux_searchfield.dart';
 import 'package:delicieux/widgets/liste_categories.dart';
 import 'package:delicieux/widgets/liste_top_recommandation.dart';
@@ -11,6 +12,18 @@ class Acceuil extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: util.couleurFond1,
         elevation: 0,
+        leading: Container(
+          margin: const EdgeInsets.fromLTRB(20, 10, 00, 0),
+          height: 50,
+          width: 50,
+          child: const CircleAvatar(
+            backgroundColor: util.couleurBordure,
+            child: Icon(
+              Icons.person,
+              color: util.couleurBlanche,
+            ),
+          ),
+        ),
       ),
       backgroundColor: util.couleurFond1,
       bottomNavigationBar: NavigationBar(

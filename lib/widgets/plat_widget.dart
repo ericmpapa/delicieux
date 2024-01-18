@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:delicieux/util/util.dart' as util;
 
 class PlatWidget extends StatelessWidget {
   String nom;
@@ -16,15 +17,39 @@ class PlatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Material(
-            child: InkWell(
-              onTap: () {},
-              child: Image.asset('assets/$url.jpg'),
+        Container(
+          height: 164,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(
+              image: AssetImage('assets/$url.jpeg'),
+              fit: BoxFit.cover,
             ),
           ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {},
+            ),
+          ),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(
+                child: Text(
+              nom,
+              style: util.normal2,
+            )),
+            const SizedBox(width: 5),
+            const Icon(Icons.star, color: util.couleurAccent, size: 24),
+            Text("$nombreAchat", style: util.normal2),
+            const SizedBox(width: 20),
+            Text("$prix \$", style: util.titre2),
+          ],
         ),
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:delicieux/widgets/plat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
 
@@ -15,7 +16,16 @@ class ListeTopRecommandation extends StatelessWidget {
           height: 10,
         ),
         Expanded(
-          child: ListView(),
+          child: ListView(
+            children: [
+              PlatWidget(
+                nom: "Poulet frites",
+                url: "poulet_frites",
+                prix: 10,
+                nombreAchat: 100,
+              ),
+            ],
+          ),
         )
       ],
     );

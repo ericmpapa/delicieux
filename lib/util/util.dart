@@ -16,3 +16,4 @@ final TextStyle titre1 =
     GoogleFonts.alfaSlabOne(color: couleurTexte, fontSize: 24);
 final titre2 = GoogleFonts.alfaSlabOne(color: couleurTexte, fontSize: 20);
 final normal1 = GoogleFonts.copse(color: couleurTexte, fontSize: 20);
+final normal2 = GoogleFonts.copse(color: couleurTexte, fontSize: 24);
