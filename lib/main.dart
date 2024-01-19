@@ -10,6 +10,7 @@ import 'pages/profil.dart';
 void main() {
   runApp(
     MaterialApp(
+      initialRoute: '/desc_plat',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => Acceuil(),
         '/hist_commandes': (BuildContext context) => HistoriqueCommandes(),

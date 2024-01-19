@@ -49,7 +49,7 @@ class PlatWidget extends StatelessWidget {
             const SizedBox(width: 5),
             Text("$nombreAchat", style: util.normal2),
             const SizedBox(width: 20),
-            Text("$prix \$", style: util.normal2),
+            Text("$prix \$", style: util.normal3),
           ],
         ),
       ],

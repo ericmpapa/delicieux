@@ -1,6 +1,8 @@
+import 'package:delicieux/widgets/bouton_panier.dart';
 import 'package:delicieux/widgets/delicieux_searchfield.dart';
 import 'package:delicieux/widgets/liste_categories.dart';
 import 'package:delicieux/widgets/liste_top_recommandation.dart';
+import 'package:delicieux/widgets/panneau_arrondi.dart';
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
 import 'package:flutter_svg_provider/flutter_svg_provider.dart'
@@ -13,6 +15,7 @@ class Acceuil extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: util.couleurFond1,
         elevation: 0,
+        actions: [BoutonPanier()],
         leading: Container(
           margin: const EdgeInsets.fromLTRB(20, 10, 00, 0),
           height: 50,
@@ -69,22 +72,8 @@ class Acceuil extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Expanded(
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
-              decoration: const BoxDecoration(
-                color: util.couleurFond2,
-                shape: BoxShape.rectangle,
-                image: DecorationImage(
-                  alignment: Alignment(1, -0.9),
-                  image: flutter_svg_provider.Svg('assets/leaf.svg'),
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
-                  bottomLeft: Radius.zero,
-                  bottomRight: Radius.zero,
-                ),
-              ),
+            child: PanneauArrondi(
+              avecImageDeFond: true,
               child: ListeTopRecommandation(),
             ),
           )
