@@ -1,9 +1,10 @@
-import 'package:delicieux/widgets/delicieux_appbar.dart';
 import 'package:delicieux/widgets/delicieux_searchfield.dart';
 import 'package:delicieux/widgets/liste_categories.dart';
 import 'package:delicieux/widgets/liste_top_recommandation.dart';
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
+import 'package:flutter_svg_provider/flutter_svg_provider.dart'
+    as flutter_svg_provider;
 
 class Acceuil extends StatelessWidget {
   @override
@@ -73,6 +74,10 @@ class Acceuil extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: util.couleurFond2,
                 shape: BoxShape.rectangle,
+                image: DecorationImage(
+                  alignment: Alignment(1, -0.9),
+                  image: flutter_svg_provider.Svg('assets/leaf.svg'),
+                ),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                   topRight: Radius.circular(50),

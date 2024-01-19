@@ -37,7 +37,7 @@ class PlatWidget extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
                 child: Text(
@@ -46,9 +46,10 @@ class PlatWidget extends StatelessWidget {
             )),
             const SizedBox(width: 5),
             const Icon(Icons.star, color: util.couleurAccent, size: 24),
+            const SizedBox(width: 5),
             Text("$nombreAchat", style: util.normal2),
             const SizedBox(width: 20),
-            Text("$prix \$", style: util.titre2),
+            Text("$prix \$", style: util.normal2),
           ],
         ),
       ],
