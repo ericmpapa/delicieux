@@ -23,3 +23,6 @@ final normal3 = GoogleFonts.corben(
 final styleBadge = GoogleFonts.anaheim(color: couleurBlanche, fontSize: 13);
 
 final normal4 = GoogleFonts.anaheim(color: couleurTexte, fontSize: 16);
+final normal5 = GoogleFonts.copse(color: couleurTexte, fontSize: 20);
+final couleurTexteBoutonDelicieux =
+    GoogleFonts.alfaSlabOne(color: couleurBlanche, fontSize: 20);

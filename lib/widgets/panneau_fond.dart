@@ -3,14 +3,22 @@ import 'package:delicieux/util/util.dart' as util;
 import 'package:flutter_svg_provider/flutter_svg_provider.dart'
     as flutter_svg_provider;
 
-class PanneauArrondi extends StatelessWidget {
-  bool avecImageDeFond;
-  Widget? child;
-  EdgeInsets? margin;
-  PanneauArrondi({this.avecImageDeFond = false, this.child, this.margin});
+class PanneauFond extends StatelessWidget {
+  final bool avecImageDeFond;
+  final bool scrollable;
+  final Widget? child;
+  final EdgeInsets? margin;
+
+  const PanneauFond(
+      {this.scrollable = false,
+      this.avecImageDeFond = false,
+      this.child,
+      this.margin});
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: const BoxConstraints.expand(),
       margin: margin,
       padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
       decoration: BoxDecoration(
@@ -29,7 +37,7 @@ class PanneauArrondi extends StatelessWidget {
           bottomRight: Radius.zero,
         ),
       ),
-      child: child,
+      child: scrollable ? SingleChildScrollView(child: child) : child,
     );
   }
 }

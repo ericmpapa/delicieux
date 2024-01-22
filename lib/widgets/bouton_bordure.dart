@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
 
-class DelicieuxBouton extends StatelessWidget {
+class BoutonBordure extends StatelessWidget {
+  final double size;
   final String label;
-  Color? color;
+  final Color color;
 
-  DelicieuxBouton({this.label = "", this.color});
+  const BoutonBordure({
+    this.size = 0,
+    this.label = "",
+    this.color = util.couleurTexte,
+  });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(Object context) {
     return Container(
+      height: size,
+      width: size,
       decoration: BoxDecoration(
-        color: color,
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: util.couleurTexte),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
@@ -20,12 +28,7 @@ class DelicieuxBouton extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {},
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Center(
-                child: Text(label, style: util.couleurTexteBoutonDelicieux),
-              ),
-            ),
+            child: Center(child: Text(label, style: util.normal1)),
           ),
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:delicieux/pages/recherche.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/acceuil.dart';
@@ -10,7 +11,6 @@ import 'pages/profil.dart';
 void main() {
   runApp(
     MaterialApp(
-      initialRoute: '/desc_plat',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => Acceuil(),
         '/hist_commandes': (BuildContext context) => HistoriqueCommandes(),
@@ -18,6 +18,7 @@ void main() {
         '/insert_token': (BuildContext context) => InsertionToken(),
         '/panier': (BuildContext context) => Panier(),
         '/profil': (BuildContext context) => Profil(),
+        '/recherche': (BuildContext context) => Recherche(),
       },
     ),
   );

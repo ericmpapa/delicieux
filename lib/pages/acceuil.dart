@@ -1,12 +1,10 @@
 import 'package:delicieux/widgets/bouton_panier.dart';
 import 'package:delicieux/widgets/delicieux_searchfield.dart';
 import 'package:delicieux/widgets/liste_categories.dart';
-import 'package:delicieux/widgets/liste_top_recommandation.dart';
-import 'package:delicieux/widgets/panneau_arrondi.dart';
+import 'package:delicieux/widgets/liste_plat.dart';
+import 'package:delicieux/widgets/panneau_fond.dart';
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
-import 'package:flutter_svg_provider/flutter_svg_provider.dart'
-    as flutter_svg_provider;
 
 class Acceuil extends StatelessWidget {
   @override
@@ -17,14 +15,35 @@ class Acceuil extends StatelessWidget {
         elevation: 0,
         actions: [BoutonPanier()],
         leading: Container(
-          margin: const EdgeInsets.fromLTRB(20, 10, 00, 0),
-          height: 50,
-          width: 50,
-          child: const CircleAvatar(
-            backgroundColor: util.couleurBordure,
-            child: Icon(
-              Icons.person,
-              color: util.couleurBlanche,
+          margin: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+          child: GestureDetector(
+            onTap: () {
+              showMenu(
+                context: context,
+                position: const RelativeRect.fromLTRB(0, 55, 0, 0),
+                items: const [
+                  PopupMenuItem<int>(
+                    child: ListTile(
+                      iconColor: util.couleurAccent,
+                      textColor: util.couleurAccent,
+                      leading: Icon(Icons.person_pin_sharp),
+                      title: Text('Profil'),
+                    ),
+                  ),
+                  PopupMenuItem<int>(
+                    child: ListTile(
+                      iconColor: util.couleurTexte,
+                      textColor: util.couleurTexte,
+                      leading: Icon(Icons.input_sharp),
+                      title: Text('Connexion'),
+                    ),
+                  ),
+                ],
+              );
+            },
+            child: const CircleAvatar(
+              backgroundColor: util.couleurBordure,
+              child: Icon(Icons.person, color: util.couleurBlanche),
             ),
           ),
         ),
@@ -34,18 +53,12 @@ class Acceuil extends StatelessWidget {
         indicatorColor: util.couleurAccent,
         destinations: const [
           NavigationDestination(
-            selectedIcon: Icon(
-              Icons.home,
-              color: util.couleurBlanche,
-            ),
+            selectedIcon: Icon(Icons.home, color: util.couleurBlanche),
             icon: Icon(Icons.home, color: util.couleurTexte),
             label: "acceuil",
           ),
           NavigationDestination(
-            selectedIcon: Icon(
-              Icons.shopping_cart,
-              color: util.couleurBlanche,
-            ),
+            selectedIcon: Icon(Icons.shopping_cart, color: util.couleurBlanche),
             icon: Icon(Icons.shopping_cart, color: util.couleurTexte),
             label: "commandes",
           ),
@@ -71,10 +84,10 @@ class Acceuil extends StatelessWidget {
                 ]),
           ),
           const SizedBox(height: 12),
-          Expanded(
-            child: PanneauArrondi(
+          const Expanded(
+            child: PanneauFond(
               avecImageDeFond: true,
-              child: ListeTopRecommandation(),
+              child: ListePlat(label: "Les plus recommandés"),
             ),
           )
         ],

@@ -7,15 +7,15 @@ class DelicieuxSearchField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
             borderSide:
                 const BorderSide(color: util.couleurBlanche, width: 0.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
             borderSide:
                 const BorderSide(color: util.couleurBordure, width: 0.0),
           ),
