@@ -1,19 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:delicieux/data/model.dart';
 import 'package:flutter/material.dart';
 import 'package:delicieux/util/util.dart' as util;
 
 class PlatWidget extends StatelessWidget {
-  String nom;
-  String url;
-  double prix;
-  double nombreAchat;
+  Plat plat;
 
-  PlatWidget({
-    this.nom = "",
-    this.url = "",
-    this.prix = 0,
-    this.nombreAchat = 0,
-  });
+  PlatWidget({this.plat = const Plat()});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +14,7 @@ class PlatWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         CachedNetworkImage(
-          imageUrl: "https://picsum.photos/250?image=9",
+          imageUrl: plat.photoUrl,
           imageBuilder: (context, imageProvider) => Container(
             height: 164,
             decoration: BoxDecoration(
@@ -65,13 +58,13 @@ class PlatWidget extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(child: Text(nom, style: util.normal2)),
+            Expanded(child: Text(plat.nom, style: util.normal2)),
             const SizedBox(width: 5),
             const Icon(Icons.star, color: util.couleurAccent, size: 24),
             const SizedBox(width: 5),
-            Text("$nombreAchat", style: util.normal2),
+            Text("0", style: util.normal2),
             const SizedBox(width: 20),
-            Text("$prix \$", style: util.normal3),
+            Text("${plat.prixUnitaire} \$", style: util.normal3),
           ],
         ),
       ],

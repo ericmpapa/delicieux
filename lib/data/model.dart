@@ -26,20 +26,21 @@ class Plat {
   final int id;
   final String nom;
   final String description;
-  final String prixUnitaire;
+  final double prixUnitaire;
   final String estimationLivraison;
+  final String photoUrl;
 
-  Plat(
-    this.id,
-    this.nom,
-    this.description,
-    this.prixUnitaire,
-    this.estimationLivraison,
-  );
+  const Plat(
+      {this.id = 0,
+      this.nom = "",
+      this.description = "",
+      this.prixUnitaire = 0,
+      this.estimationLivraison = "",
+      this.photoUrl = ""});
 
   @override
   String toString() =>
-      "Plat {id:$id,nom:$nom,description:$description,prixUnitaire:$prixUnitaire,estimationLivraison:$estimationLivraison}";
+      "Plat {id:$id,nom:$nom,description:$description,prixUnitaire:$prixUnitaire,estimationLivraison:$estimationLivraison,photUrl:$photoUrl}";
 }
 
 class DetailCommande {

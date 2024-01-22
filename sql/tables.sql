@@ -13,7 +13,8 @@ CREATE TABLE plat(
     nom TEXT,
     description TEXT,
     prixUnitaire DECIMAL(10,2),
-    estimationLivraision TEXT
+    estimationLivraision TEXT,
+    photoUrl TEXT,
 );
 
 CREATE TABLE commande(

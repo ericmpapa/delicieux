@@ -7,8 +7,10 @@ import 'pages/historique_commandes.dart';
 import 'pages/insertion_token.dart';
 import 'pages/panier.dart';
 import 'pages/profil.dart';
+import 'package:delicieux/data/dao.dart' as dao;
 
 void main() {
+  dao.intialiser();
   runApp(
     MaterialApp(
       routes: <String, WidgetBuilder>{
