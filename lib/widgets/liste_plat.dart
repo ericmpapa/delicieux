@@ -26,7 +26,12 @@ class ListePlat extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
-                    return PlatWidget(plat: snapshot.data![index]);
+                    return Column(children: [
+                      PlatWidget(plat: snapshot.data![index]),
+                      const SizedBox(
+                        height: 10,
+                      )
+                    ]);
                   },
                 ),
               )

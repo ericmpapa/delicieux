@@ -86,7 +86,7 @@ class Acceuil extends StatelessWidget {
           const SizedBox(height: 12),
           const Expanded(
             child: PanneauFond(
-              avecImageDeFond: true,
+              avecImageDeFond: false,
               child: ListePlat(label: "Les plus recommandés"),
             ),
           )

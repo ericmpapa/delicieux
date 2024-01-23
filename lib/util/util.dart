@@ -16,8 +16,8 @@ final TextStyle titre1 =
     GoogleFonts.alfaSlabOne(color: couleurTexte, fontSize: 24);
 final titre2 = GoogleFonts.alfaSlabOne(color: couleurTexte, fontSize: 20);
 final normal1 = GoogleFonts.copse(color: couleurTexte, fontSize: 20);
-final normal2 = GoogleFonts.corben(color: couleurTexte, fontSize: 24);
-final normal3 = GoogleFonts.corben(
+final normal2 = GoogleFonts.anaheim(color: couleurTexte, fontSize: 24);
+final normal3 = GoogleFonts.anaheim(
     color: couleurTexte, fontSize: 24, fontWeight: FontWeight.bold);
 
 final styleBadge = GoogleFonts.anaheim(color: couleurBlanche, fontSize: 13);

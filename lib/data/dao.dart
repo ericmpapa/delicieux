@@ -11,23 +11,25 @@ void intialiser() async {
 
 Future<List<Plat>> getTopRecommandation() async {
   var ret = <Plat>[];
+  print("hello");
   return Supabase.instance.client
       .from('plat')
-      .select('id,nom,description,prixUnitaire,estimationLivraison,photoUrl')
+      .select('id,nom,description,prixunitaire,estimationlivraision,photourl')
       .limit(5)
       .then((value) {
     ret = value
         .map(
           (tabValue) => Plat(
-            id: int.parse(tabValue['id']),
+            id: int.parse(tabValue['id'].toString()),
             nom: tabValue['nom'],
             description: tabValue['description'],
-            prixUnitaire: double.parse(tabValue['prixUnitaire']),
-            estimationLivraison: tabValue['estimationLivraision'],
-            photoUrl: tabValue['photoUrl'],
+            prixUnitaire: double.parse(tabValue['prixunitaire'].toString()),
+            estimationLivraison: tabValue['estimationlivraision'],
+            photoUrl: tabValue['photourl'],
           ),
         )
         .toList();
+    print(ret);
     return ret;
   });
 }

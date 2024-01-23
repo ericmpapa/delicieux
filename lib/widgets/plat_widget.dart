@@ -54,7 +54,7 @@ class PlatWidget extends StatelessWidget {
           ),
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
